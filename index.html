@@ -19,19 +19,26 @@
 			document.getElementById("input").value = JSON.stringify(exampleObject2);
 		}
 	</script>
-	<h1>CCAnimationParser</h1>
-	<h2>Supports following properties: position, scaleX, scaleY, rotation, opacity</h2>
-	<div style="width:50%; display: inline-block; float: left;">
-		<form action="javascript:print(input.value)">
-			<h3>Enter Cocos Creator animation content</h3><br>
-			<textarea type="text" id="input" style="width:95%;height: 50%;font-size: 18px;resize: none;"></textarea><br><br>
-			<input type="submit" value="Parse" style="padding: 10px;font-size: 20px;">
-			<input type="button" value="Example1" style="padding: 10px;font-size: 20px;" onclick="getExample1()">
-			<input type="button" value="Example2" style="padding: 10px;font-size: 20px;" onclick="getExample2()">
-		</form>
-	</div>
-	<div style="width:50%; display: inline-block;">
-		<h3>Result</h3><br>
-		<textarea readonly type="text" id="output" style="width:95%;height: 50%;font-size: 18px;resize: none;ena"></textarea><br>
+	<div>
+		<h1>CCAnimationParser</h1>
+		<h2>Supports following properties: position, scaleX, scaleY, rotation, opacity</h2>
+		<div style="width:50%; display: inline-block; float: left;">
+			<form action="javascript:print(input.value)">
+				<h3>Enter Cocos Creator animation content</h3><br>
+				<textarea type="text" id="input" style="width:95%;height: 50%;font-size: 18px;resize: none;"></textarea><br><br>
+				<input type="submit" value="Parse" style="padding: 10px;font-size: 20px;">
+				<input type="button" value="Example1" style="padding: 10px;font-size: 20px;" onclick="getExample1()">
+				<input type="button" value="Example2" style="padding: 10px;font-size: 20px;" onclick="getExample2()">
+			</form>
+		</div>
+		<div style="width:50%; display: inline-block;">
+			<h3>Result</h3><br>
+			<textarea readonly type="text" id="output" style="width:95%;height: 50%;font-size: 18px;resize: none;ena"></textarea><br>
+		</div>
 	</div>
 </body>
+<footer>
+	<div style="margin-top: 20px">	
+ 		<big>&copy; Copyright 2017 Duong H. Tran Inc. All Rights Reserved.</big>
+ 	</div>
+</footer>
