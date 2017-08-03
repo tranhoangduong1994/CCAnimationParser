@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>CCAnimationParser</title>
+</head>
+<body>
+	<script type="text/javascript" src="./Parser.js"></script>
+	<script type="text/javascript">
+		function print(animationContent) {
+			document.getElementById("output").value = getParsedString(animationContent);
+		}
+	</script>
+	<h1>CCAnimationParser</h1>
+	<div style="width:50%; display: inline-block; float: left;">
+		<form action="javascript:print(input.value)">
+			<h3>Enter Cocos Creator animation content</h3><br>
+			<textarea type="text" id="input" style="width:95%;height: 50%;font-size: 18px;resize: none;"></textarea><br><br>
+			<input type="submit" value="Parse" style="padding: 10px;font-size: 20px;">
+		</form>
+	</div>
+	<div style="width:50%; display: inline-block;">
+		<h3>Result</h3><br>
+		<textarea type="text" id="output" style="width:95%;height: 50%;font-size: 18px;resize: none;"></textarea><br>
+	</div>
+</body>
