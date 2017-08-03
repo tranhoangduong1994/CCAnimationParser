@@ -6,7 +6,11 @@
 	<script type="text/javascript" src="./Parser.js"></script>
 	<script type="text/javascript">
 		function print(animationContent) {
-			document.getElementById("output").value = getParsedString(animationContent);
+			try {
+				document.getElementById("output").value = getParsedString(animationContent);
+			} catch (err) {
+				document.getElementById("output").value = "Invalid input.\nError: " + err.message;
+			}
 		}
 		function getExample() {
 			document.getElementById("input").value = JSON.stringify(exampleObject);
