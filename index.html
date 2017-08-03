@@ -12,8 +12,11 @@
 				document.getElementById("output").value = "Invalid input.\nError: " + err.message;
 			}
 		}
-		function getExample() {
-			document.getElementById("input").value = JSON.stringify(exampleObject);
+		function getExample1() {
+			document.getElementById("input").value = JSON.stringify(exampleObject1);
+		}
+		function getExample2() {
+			document.getElementById("input").value = JSON.stringify(exampleObject2);
 		}
 	</script>
 	<h1>CCAnimationParser</h1>
@@ -23,7 +26,8 @@
 			<h3>Enter Cocos Creator animation content</h3><br>
 			<textarea type="text" id="input" style="width:95%;height: 50%;font-size: 18px;resize: none;"></textarea><br><br>
 			<input type="submit" value="Parse" style="padding: 10px;font-size: 20px;">
-			<input type="button" value="Example" style="padding: 10px;font-size: 20px;" onclick="getExample()">
+			<input type="button" value="Example1" style="padding: 10px;font-size: 20px;" onclick="getExample1()">
+			<input type="button" value="Example2" style="padding: 10px;font-size: 20px;" onclick="getExample2()">
 		</form>
 	</div>
 	<div style="width:50%; display: inline-block;">

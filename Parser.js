@@ -138,7 +138,7 @@ function convertAnimToJs(paths) {
 }
 
 // //test
-var exampleObject = {
+var exampleObject1 = {
       "mask-0": {
         "props": {
           "position": [
@@ -278,6 +278,79 @@ var exampleObject = {
         }
     }
 };
+
+var exampleObject2 = {
+      "overlay1": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 150
+            }
+          ]
+        }
+      },
+      "dialog1": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": 255
+            }
+          ],
+          "scaleX": [
+            {
+              "frame": 0,
+              "value": 0.75,
+              "curve": "cubicOut"
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 1.05,
+              "curve": [
+                0.41,
+                0.26,
+                0.5,
+                0.5
+              ]
+            },
+            {
+              "frame": 0.4,
+              "value": 1
+            }
+          ],
+          "scaleY": [
+            {
+              "frame": 0,
+              "value": 0.75,
+              "curve": "cubicOut"
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 1.05,
+              "curve": [
+                0.41,
+                0.22,
+                0.5,
+                0.5
+              ]
+            },
+            {
+              "frame": 0.4,
+              "value": 1
+            }
+          ]
+        }
+      }
+}
 
 function getParsedString(object) {
 	var parseResults = convertAnimToJs(object);
