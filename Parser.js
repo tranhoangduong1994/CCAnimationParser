@@ -138,146 +138,146 @@ function convertAnimToJs(paths) {
 }
 
 // //test
-// var object = {
-//       "mask-0": {
-//         "props": {
-//           "position": [
-//             {
-//               "frame": 0.2,
-//               "value": [
-//                 512,
-//                 332
-//               ],
-//               "curve": "circOut"
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": [
-//                 512,
-//                 600
-//               ]
-//             }
-//           ],
-//           "rotation": [
-//             {
-//               "frame": 0.2,
-//               "value": 0,
-//               "curve": "circOut"
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": 720
-//             }
-//           ],
-//           "opacity": [
-//             {
-//               "frame": 0.2,
-//               "value": 255
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": 200
-//             },
-//             {
-//               "frame": 1.7,
-//               "value": 0
-//             }
-//           ]
-//         }
-//       },
-//       "mask-1": {
-//         "props": {
-//           "position": [
-//             {
-//               "frame": 0.2,
-//               "value": [
-//                 512,
-//                 332
-//               ],
-//               "curve": "circOut"
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": [
-//                 312,
-//                 132
-//               ]
-//             }
-//           ],
-//           "rotation": [
-//             {
-//               "frame": 0.2,
-//               "value": 0,
-//               "curve": "circOut"
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": 720
-//             }
-//           ],
-//           "opacity": [
-//             {
-//               "frame": 0.2,
-//               "value": 255
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": 200
-//             },
-//             {
-//               "frame": 1.7,
-//               "value": 0
-//             }
-//           ]
-//         }
-//       },
-//       "mask-2": {
-//         "props": {
-//           "position": [
-//             {
-//               "frame": 0.2,
-//               "value": [
-//                 512,
-//                 332
-//               ],
-//               "curve": "circOut"
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": [
-//                 712,
-//                 132
-//               ]
-//             }
-//           ],
-//           "rotation": [
-//             {
-//               "frame": 0.2,
-//               "value": 0,
-//               "curve": "circOut"
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": 720
-//             }
-//           ],
-//           "opacity": [
-//             {
-//               "frame": 0.2,
-//               "value": 255
-//             },
-//             {
-//               "frame": 0.7,
-//               "value": 200
-//             },
-//             {
-//               "frame": 1.7,
-//               "value": 0
-//             }
-//           ]
-//         }
-//     }
-// };
+var exampleObject = {
+      "mask-0": {
+        "props": {
+          "position": [
+            {
+              "frame": 0.2,
+              "value": [
+                512,
+                332
+              ],
+              "curve": "circOut"
+            },
+            {
+              "frame": 0.7,
+              "value": [
+                512,
+                600
+              ]
+            }
+          ],
+          "rotation": [
+            {
+              "frame": 0.2,
+              "value": 0,
+              "curve": "circOut"
+            },
+            {
+              "frame": 0.7,
+              "value": 720
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.2,
+              "value": 255
+            },
+            {
+              "frame": 0.7,
+              "value": 200
+            },
+            {
+              "frame": 1.7,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "mask-1": {
+        "props": {
+          "position": [
+            {
+              "frame": 0.2,
+              "value": [
+                512,
+                332
+              ],
+              "curve": "circOut"
+            },
+            {
+              "frame": 0.7,
+              "value": [
+                312,
+                132
+              ]
+            }
+          ],
+          "rotation": [
+            {
+              "frame": 0.2,
+              "value": 0,
+              "curve": "circOut"
+            },
+            {
+              "frame": 0.7,
+              "value": 720
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.2,
+              "value": 255
+            },
+            {
+              "frame": 0.7,
+              "value": 200
+            },
+            {
+              "frame": 1.7,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "mask-2": {
+        "props": {
+          "position": [
+            {
+              "frame": 0.2,
+              "value": [
+                512,
+                332
+              ],
+              "curve": "circOut"
+            },
+            {
+              "frame": 0.7,
+              "value": [
+                712,
+                132
+              ]
+            }
+          ],
+          "rotation": [
+            {
+              "frame": 0.2,
+              "value": 0,
+              "curve": "circOut"
+            },
+            {
+              "frame": 0.7,
+              "value": 720
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.2,
+              "value": 255
+            },
+            {
+              "frame": 0.7,
+              "value": 200
+            },
+            {
+              "frame": 1.7,
+              "value": 0
+            }
+          ]
+        }
+    }
+};
 
 function getParsedString(object) {
 	var parseResults = convertAnimToJs(object);

@@ -8,6 +8,9 @@
 		function print(animationContent) {
 			document.getElementById("output").value = getParsedString(animationContent);
 		}
+		function getExample() {
+			document.getElementById("input").value = JSON.stringify(exampleObject);
+		}
 	</script>
 	<h1>CCAnimationParser</h1>
 	<div style="width:50%; display: inline-block; float: left;">
@@ -15,6 +18,7 @@
 			<h3>Enter Cocos Creator animation content</h3><br>
 			<textarea type="text" id="input" style="width:95%;height: 50%;font-size: 18px;resize: none;"></textarea><br><br>
 			<input type="submit" value="Parse" style="padding: 10px;font-size: 20px;">
+			<input type="button" value="Example" style="padding: 10px;font-size: 20px;" onclick="getExample()">
 		</form>
 	</div>
 	<div style="width:50%; display: inline-block;">
