@@ -92,21 +92,24 @@ function convertAnimToJs(paths) {
 				var currentMoment = property[j];
 				var nextMoment = property[j + 1];
 				var deltaFrame = nextMoment["frame"] - currentMoment["frame"];
-				var deltaValue = doMinus(nextMoment["value"], currentMoment["value"]);
+        var nextValue = nextMoment["value"];
+				// var deltaValue = doMinus(nextMoment["value"], currentMoment["value"]);
 				var curve = currentMoment["curve"]; 
 
 				var newLine = "";
 
 				if (action == "scaleX") {
-					newLine = newLine.concat("cc.scaleBy(" + deltaFrame + ", " + deltaValue + ", 0)");
+          var scaleYTo = props["scaleY"][j + 1]["value"];
+					newLine = newLine.concat("cc.scaleTo(" + deltaFrame + ", " + nextValue + ", " + scaleYTo + ")");
 				} else if (action == "scaleY") {
-					newLine = newLine.concat("cc.scaleBy(" + deltaFrame + ", 0, " + deltaValue + ")");
+          var scaleXTo = props["scaleX"][j + 1]["value"];
+					newLine = newLine.concat("cc.scaleTo(" + deltaFrame + ", " + scaleXTo + ", " + nextValue + ")");
 				} else if (action == "position") {
-					newLine = newLine.concat("cc.moveBy(" + deltaFrame + ", cc.p(" + deltaValue[0] + ", " + deltaValue[1] + "))");
+					newLine = newLine.concat("cc.moveTo(" + deltaFrame + ", cc.p(" + nextValue[0] + ", " + nextValue[1] + "))");
 				} else if (action == "rotation") {
-					newLine = newLine.concat("cc.rotateBy(" + deltaFrame + ", " + deltaValue + ")");
+					newLine = newLine.concat("cc.rotateTo(" + deltaFrame + ", " + nextValue + ")");
 				} else if (action == "opacity") {
-					newLine = newLine.concat("cc.fadeBy(" + deltaFrame + ", " + deltaValue + ")");
+					newLine = newLine.concat("cc.fadeTo(" + deltaFrame + ", " + nextMoment["value"] + ")");
 				}
 
 				if (curve) {
