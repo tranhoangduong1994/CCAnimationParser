@@ -74,8 +74,6 @@ function convertAnimToJs(paths) {
 		var actionKeys = Object.keys(props);//actionKeys: position, rotation, opacity, scaleX, scaleY
 		for (var i = 0; i < actionKeys.length; i++) {
 			var action = actionKeys[i];
-		// }
-		// for (var action in props) { //action: position, rotation, opacity, scaleX, scaleY
 			var property = props[action];
 			var previousFrame = 0;
 
@@ -91,18 +89,17 @@ function convertAnimToJs(paths) {
 			for (var j = 0; j < property.length - 1; j++) {
 				var currentMoment = property[j];
 				var nextMoment = property[j + 1];
-				var deltaFrame = nextMoment["frame"] - currentMoment["frame"];
-        var nextValue = nextMoment["value"];
-				// var deltaValue = doMinus(nextMoment["value"], currentMoment["value"]);
+				var deltaFrame = (nextMoment["frame"] - currentMoment["frame"]).toFixed(2);
+                var nextValue = nextMoment["value"];
 				var curve = currentMoment["curve"]; 
 
 				var newLine = "";
 
 				if (action == "scaleX") {
-          var scaleYTo = props["scaleY"][j + 1]["value"];
+                var scaleYTo = props["scaleY"][j + 1]["value"];
 					newLine = newLine.concat("cc.scaleTo(" + deltaFrame + ", " + nextValue + ", " + scaleYTo + ")");
 				} else if (action == "scaleY") {
-          var scaleXTo = props["scaleX"][j + 1]["value"];
+                var scaleXTo = props["scaleX"][j + 1]["value"];
 					newLine = newLine.concat("cc.scaleTo(" + deltaFrame + ", " + scaleXTo + ", " + nextValue + ")");
 				} else if (action == "position") {
 					newLine = newLine.concat("cc.moveTo(" + deltaFrame + ", cc.p(" + nextValue[0] + ", " + nextValue[1] + "))");
@@ -142,217 +139,217 @@ function convertAnimToJs(paths) {
 
 // //test
 var exampleObject1 = {
-      "mask-0": {
+    "mask-0": {
         "props": {
-          "position": [
-            {
-              "frame": 0.2,
-              "value": [
-                512,
-                332
-              ],
-              "curve": "circOut"
-            },
-            {
-              "frame": 0.7,
-              "value": [
-                512,
-                600
-              ]
-            }
-          ],
-          "rotation": [
-            {
-              "frame": 0.2,
-              "value": 0,
-              "curve": "circOut"
-            },
-            {
-              "frame": 0.7,
-              "value": 720
-            }
-          ],
-          "opacity": [
-            {
-              "frame": 0.2,
-              "value": 255
-            },
-            {
-              "frame": 0.7,
-              "value": 200
-            },
-            {
-              "frame": 1.7,
-              "value": 0
-            }
-          ]
+            "position": [
+                {
+                    "frame": 0.2,
+                    "value": [
+                        512,
+                        332
+                    ],
+                    "curve": "circOut"
+                },
+                {
+                    "frame": 0.7,
+                    "value": [
+                        512,
+                        600
+                    ]
+                }
+            ],
+            "rotation": [
+                {
+                    "frame": 0.2,
+                    "value": 0,
+                    "curve": "circOut"
+                },
+                {
+                    "frame": 0.7,
+                    "value": 720
+                }
+            ],
+            "opacity": [
+                {
+                    "frame": 0.2,
+                    "value": 255
+                },
+                {
+                    "frame": 0.7,
+                    "value": 200
+                },
+                {
+                    "frame": 1.7,
+                    "value": 0
+                }
+            ]
         }
-      },
-      "mask-1": {
+    },
+    "mask-1": {
         "props": {
-          "position": [
-            {
-              "frame": 0.2,
-              "value": [
-                512,
-                332
-              ],
-              "curve": "circOut"
-            },
-            {
-              "frame": 0.7,
-              "value": [
-                312,
-                132
-              ]
-            }
-          ],
-          "rotation": [
-            {
-              "frame": 0.2,
-              "value": 0,
-              "curve": "circOut"
-            },
-            {
-              "frame": 0.7,
-              "value": 720
-            }
-          ],
-          "opacity": [
-            {
-              "frame": 0.2,
-              "value": 255
-            },
-            {
-              "frame": 0.7,
-              "value": 200
-            },
-            {
-              "frame": 1.7,
-              "value": 0
-            }
-          ]
+            "position": [
+                {
+                    "frame": 0.2,
+                    "value": [
+                        512,
+                        332
+                    ],
+                    "curve": "circOut"
+                },
+                {
+                    "frame": 0.7,
+                    "value": [
+                        312,
+                        132
+                    ]
+                }
+            ],
+            "rotation": [
+                {
+                    "frame": 0.2,
+                    "value": 0,
+                    "curve": "circOut"
+                },
+                {
+                    "frame": 0.7,
+                    "value": 720
+                }
+            ],
+            "opacity": [
+                {
+                    "frame": 0.2,
+                    "value": 255
+                },
+                {
+                    "frame": 0.7,
+                    "value": 200
+                },
+                {
+                    "frame": 1.7,
+                    "value": 0
+                }
+            ]
         }
-      },
-      "mask-2": {
+    },
+    "mask-2": {
         "props": {
-          "position": [
-            {
-              "frame": 0.2,
-              "value": [
-                512,
-                332
-              ],
-              "curve": "circOut"
-            },
-            {
-              "frame": 0.7,
-              "value": [
-                712,
-                132
-              ]
-            }
-          ],
-          "rotation": [
-            {
-              "frame": 0.2,
-              "value": 0,
-              "curve": "circOut"
-            },
-            {
-              "frame": 0.7,
-              "value": 720
-            }
-          ],
-          "opacity": [
-            {
-              "frame": 0.2,
-              "value": 255
-            },
-            {
-              "frame": 0.7,
-              "value": 200
-            },
-            {
-              "frame": 1.7,
-              "value": 0
-            }
-          ]
+            "position": [
+                {
+                    "frame": 0.2,
+                    "value": [
+                        512,
+                        332
+                    ],
+                    "curve": "circOut"
+                },
+                {
+                    "frame": 0.7,
+                    "value": [
+                        712,
+                        132
+                    ]
+                }
+            ],
+            "rotation": [
+                {
+                    "frame": 0.2,
+                    "value": 0,
+                    "curve": "circOut"
+                },
+                {
+                    "frame": 0.7,
+                    "value": 720
+                }
+            ],
+            "opacity": [
+                {
+                    "frame": 0.2,
+                    "value": 255
+                },
+                {
+                    "frame": 0.7,
+                    "value": 200
+                },
+                {
+                    "frame": 1.7,
+                    "value": 0
+                }
+            ]
         }
     }
 };
 
 var exampleObject2 = {
-      "overlay1": {
+    "overlay1": {
         "props": {
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 0.16666666666666666,
-              "value": 150
-            }
-          ]
+            "opacity": [
+                {
+                    "frame": 0,
+                    "value": 0
+                },
+                {
+                    "frame": 0.16666666666666666,
+                    "value": 150
+                }
+            ]
         }
-      },
-      "dialog1": {
+    },
+    "dialog1": {
         "props": {
-          "opacity": [
-            {
-              "frame": 0,
-              "value": 0
-            },
-            {
-              "frame": 0.23333333333333334,
-              "value": 255
-            }
-          ],
-          "scaleX": [
-            {
-              "frame": 0,
-              "value": 0.75,
-              "curve": "cubicOut"
-            },
-            {
-              "frame": 0.3333333333333333,
-              "value": 1.05,
-              "curve": [
-                0.41,
-                0.26,
-                0.5,
-                0.5
-              ]
-            },
-            {
-              "frame": 0.4,
-              "value": 1
-            }
-          ],
-          "scaleY": [
-            {
-              "frame": 0,
-              "value": 0.75,
-              "curve": "cubicOut"
-            },
-            {
-              "frame": 0.3333333333333333,
-              "value": 1.05,
-              "curve": [
-                0.41,
-                0.22,
-                0.5,
-                0.5
-              ]
-            },
-            {
-              "frame": 0.4,
-              "value": 1
-            }
-          ]
+            "opacity": [
+                {
+                    "frame": 0,
+                    "value": 0
+                },
+                {
+                    "frame": 0.23333333333333334,
+                    "value": 255
+                }
+            ],
+            "scaleX": [
+                {
+                    "frame": 0,
+                    "value": 0.75,
+                    "curve": "cubicOut"
+                },
+                {
+                    "frame": 0.3333333333333333,
+                    "value": 1.05,
+                    "curve": [
+                        0.41,
+                        0.26,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "frame": 0.4,
+                    "value": 1
+                }
+            ],
+            "scaleY": [
+                {
+                    "frame": 0,
+                    "value": 0.75,
+                    "curve": "cubicOut"
+                },
+                {
+                    "frame": 0.3333333333333333,
+                    "value": 1.05,
+                    "curve": [
+                        0.41,
+                        0.22,
+                        0.5,
+                        0.5
+                    ]
+                },
+                {
+                    "frame": 0.4,
+                    "value": 1
+                }
+            ]
         }
-      }
+    }
 }
 
 function getParsedString(object) {
