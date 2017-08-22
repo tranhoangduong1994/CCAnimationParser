@@ -96,11 +96,9 @@ function convertAnimToJs(paths) {
 				var newLine = "";
 
 				if (action == "scaleX") {
-                var scaleYTo = props["scaleY"][j + 1]["value"];
-					newLine = newLine.concat("cc.scaleTo(" + deltaFrame + ", " + nextValue + ", " + scaleYTo + ")");
+					newLine = newLine.concat("h102.scaleXTo(" + deltaFrame + ", " + nextValue + ")");
 				} else if (action == "scaleY") {
-                var scaleXTo = props["scaleX"][j + 1]["value"];
-					newLine = newLine.concat("cc.scaleTo(" + deltaFrame + ", " + scaleXTo + ", " + nextValue + ")");
+					newLine = newLine.concat("h102.scaleYTo(" + deltaFrame + ", " + nextValue + ")");
 				} else if (action == "position") {
 					newLine = newLine.concat("cc.moveTo(" + deltaFrame + ", cc.p(" + nextValue[0] + ", " + nextValue[1] + "))");
 				} else if (action == "rotation") {
@@ -113,7 +111,7 @@ function convertAnimToJs(paths) {
 					if (typeof curve == "string") {
 						newLine = newLine.concat(".easing(" + curves[curve] + "())");
 					} else {
-						newLine = newLine.concat(".easing(cc.easeBezierAction(" + curve[0] + ", " + curve[1] + ", " + curve[2] + ", " + curve[3] + "))");
+						newLine = newLine.concat(".easing(cc.easeBezierAction(0, " + curve[1] + ", " + curve[3] + ", 1))");
 					}
 				}
 
